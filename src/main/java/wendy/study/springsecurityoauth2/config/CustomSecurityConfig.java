@@ -1,4 +1,4 @@
-package wendy.study.springsecurityoauth2.Config;
+package wendy.study.springsecurityoauth2.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -6,6 +6,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.web.SecurityFilterChain;
 
 @EnableWebSecurity
+// 또는 @Configuration
 public class CustomSecurityConfig {
 
     @Bean
