@@ -4,13 +4,15 @@
 
 ## ⭐ 목차
 - [⭐ 개발 환경](#-개발-환경)
-- ⭐ Spring Security Fundamentals
+- ⭐ [Spring Security 인증 및 인가](#-spring-security-인증-및-인가-요약)
   - [1-1. Security Builder](/docs/1-1.Security%20Builder.md)
   - [1-2. AutoConfiguration](/docs/1-2.AutoConfiguration.md)
   - [1-3. AuthenticationEntryPoint](/docs/1-3.AuthenticationEntryPoint.md)
-  - [Spring Security 인증 및 인가 요약](#-spring-security-인증-및-인가-요약)
+- ⭐ [OAuth 2.0 Roles](#-oauth-20-roles-요약)
   - [2-0. Keycloak 설치 및 설정](/docs/2-0.Keycloak%20설치%20및%20설정.md)
-  - [OAuth 2.0 Roles 요약](#-oauth-20-roles-요약)
+  - [2-1. OAuth2.0 Roles](/docs/2-1.OAuth2.0%20Roles.md)
+  - [2-2.OAuth2.0 Client Types](/docs/2-2.OAuth2.0%20Client%20Types.md)
+  - [2-3.OAuth2.0 Token Types](/docs/2-3.OAuth2.0%20Token%20Types.md)
 
 ## ⭐ 개발 환경
 - SpringBoot version `2.7.18`
@@ -77,7 +79,6 @@
 - 클라이언트에게 권한 부여 승인 또는 거부하는 서버
 - 인가서버가 사용자에게 클라이언트에 대한 권한 부여 요청을 받아서
 - 클라이언트에게 엑세스 토큰을 부여함
-- (사용자) --- (인가서버) --- (클라이언트)
 
 ### ✨ Client
 - 사용자를 대신하여 권한을 부여받아 사용자의 리소스에 접근하려는 어플리케이션
