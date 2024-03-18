@@ -11,8 +11,9 @@
 - ⭐ [OAuth 2.0 Roles](#-oauth-20-roles-요약)
   - [2-0. Keycloak 설치 및 설정](/docs/2-0.Keycloak%20설치%20및%20설정.md)
   - [2-1. OAuth2.0 Roles](/docs/2-1.OAuth2.0%20Roles.md)
-  - [2-2.OAuth2.0 Client Types](/docs/2-2.OAuth2.0%20Client%20Types.md)
-  - [2-3.OAuth2.0 Token Types](/docs/2-3.OAuth2.0%20Token%20Types.md)
+  - [2-2. OAuth2.0 Client Types](/docs/2-2.OAuth2.0%20Client%20Types.md)
+  - [2-3. OAuth2.0 Token Types](/docs/2-3.OAuth2.0%20Token%20Types.md)
+  - [2-4. OAuth2.0 Grant Types](/docs/2-4.OAuth2.0%20Grant%20Types.md)
 
 ## ⭐ 개발 환경
 - SpringBoot version `2.7.18`
