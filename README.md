@@ -15,6 +15,7 @@
   - [2-3. OAuth2.0 Token Types](/docs/2-3.OAuth2.0%20Token%20Types.md)
 - ⭐ [OAuth 2.0 Grant Types](#-oauth-20-grant-types-요약)
   - [2-4. OAuth2.0 Grant Types](/docs/2-4.OAuth2.0%20Grant%20Types.md)
+- ⭐ [OAuth 2.0 OpenID Connect](#-oauth-20-openid-connect)
 
 
 ## ⭐ 개발 환경
@@ -115,3 +116,11 @@
 - Code Verifier 와 Code Challenge를 추가하여 Code가 탈취당했을 때 Access Token을 발급하지 못하도록 차단
 - Code 요청시에는 Code Challenge, Code Challenge Method 포함하여 요청
 - Access Token 요청시에는 Code Verifier 포함하여 요청
+
+# ⭐ OAuth 2.0 OpenID Connect
+- OAuth 2.0 프로토콜 위에 구축된 ID 계층 `인증 프로토콜`
+- scope 지정 시 `openid` 를 포함하면 OpenID Connect 사용이 가능
+- 인증에 대한 정보는 `ID 토큰`이라고 하는 JWT로 반환
+- (참고) OAuth2.0은 `인가 프레임워크`
+- ID Token Decoding
+  ![](images/openid_decode.png)
