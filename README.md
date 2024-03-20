@@ -13,7 +13,9 @@
   - [2-1. OAuth2.0 Roles](/docs/2-1.OAuth2.0%20Roles.md)
   - [2-2. OAuth2.0 Client Types](/docs/2-2.OAuth2.0%20Client%20Types.md)
   - [2-3. OAuth2.0 Token Types](/docs/2-3.OAuth2.0%20Token%20Types.md)
+- ⭐ [OAuth 2.0 Grant Types](#-oauth-20-grant-types-요약)
   - [2-4. OAuth2.0 Grant Types](/docs/2-4.OAuth2.0%20Grant%20Types.md)
+
 
 ## ⭐ 개발 환경
 - SpringBoot version `2.7.18`
@@ -83,3 +85,33 @@
 
 ### ✨ Client
 - 사용자를 대신하여 권한을 부여받아 사용자의 리소스에 접근하려는 어플리케이션
+
+# ⭐ OAuth 2.0 Grant Types 요약
+
+### ✨ Authorization Code
+- 사용자의 인증 및 동의 후 인가서버는 클라이언트에게 Code를 응답
+- 클라이언트는 코드를 보내 인가서버로부터 Access Token을 발급 받음
+
+### ✨ Implicit (Deprecated)
+- 사용자의 인증 및 동의 후 인가서버는 클라이언트에게 Access Token을 응답
+- 브라우저에 Access Token 노출되므로 보안에 취약함
+
+### ✨ Resource Owner Password Credentials (Deprecated)
+- 사용자의 ID와 password를 통해 권한 부여를 받음 
+- 사용자의 ID와 Password가 브라우저에 노출되므로 보안에 취약함
+- 또한 클라이언트가 사용자 ID, Password를 알고있으므로 신뢰성 높은 자사 애플리케이션 등에서만 사용하는 방식
+
+### ✨ Client Credentials
+- 클라이언트의 ID, Secret만 있으면 인가서버로부터 Token 발급 받음
+- 사용자가 클라이언트임
+
+### ✨ Refresh Token
+- Access Token 만료 시 Refresh Token으로 Access Token을 재발급 받음
+- Refresh Token이 유효하다면 인증과정을 처음부터 반복하지 않아도 Access Token을 재발급 받을 수 있음
+- 한번 사용된 Refresh Token은 폐기되거나 재사용 할 수 있음
+
+### ✨ PKCE-Enhanced Authorization Code
+- Authorization Code Grant Type 의 확장 버전
+- Code Verifier 와 Code Challenge를 추가하여 Code가 탈취당했을 때 Access Token을 발급하지 못하도록 차단
+- Code 요청시에는 Code Challenge, Code Challenge Method 포함하여 요청
+- Access Token 요청시에는 Code Verifier 포함하여 요청
