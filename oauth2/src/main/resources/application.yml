@@ -1,2 +1,24 @@
 server:
   port: 8081
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration: # 클라이언트 정보 설정
+          keycloak:
+            client-id: oauth2-client-app # 인가서버에 등록 된 클라이언트 id
+#            client-name: oauth2-client-app # 자유롭게 입력
+            client-secret: DCnrI56S2PXXQxvyPgBPvc816GbmXbXW # 서비스 공급자에 등록된 클라이언트 시크릿
+            redirect-uri: http://localhost:8081/login/oauth2/code/keycloak # 인가서버에서 권한 코드 부여 후 클라이언트로 리다이렉트
+            authorization-grant-type: authorization_code # 권한 부여 타입
+            client-authentication-method: client_secret_basic # 클라이언트 자격증명 전송방식 (basic, post, ... )
+            scope: openid,profile,email # 리소스 접근 제한 범위
+        provider: # 공급자 설정 (인가 서버)
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/oauth2 # 공급자 위치 (인가서버의 메타데이터 가져올 기본 uri)
+            authorization-uri: http://localhost:8080/realms/oauth2/protocol/openid-connect/auth # 권한 코드 부여 엔드포인트
+            token-uri:  http://localhost:8080/realms/oauth2/protocol/openid-connect/token # OAuth2.0 token 엔드포인트
+            user-info-uri:  http://localhost:8080/realms/oauth2/protocol/openid-connect/userinfo # OAuth2.0 userinfo 엔드포인트
+            jwk-set-uri:  http://localhost:8080/realms/oauth2/protocol/openid-connect/certs # OAuth2.0 JwkWetUri 엔드포인트
+            user-name-attribute: preferred_username # OAuth2.0 사용자명 추출하는 클레임 (공급자마다 이름이 다름)
