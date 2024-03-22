@@ -16,7 +16,8 @@
 - ⭐ [OAuth 2.0 Grant Types](#-oauth-20-grant-types-요약)
   - [2-4. OAuth2.0 Grant Types](/docs/2-4.OAuth2.0%20Grant%20Types.md)
 - ⭐ [OAuth 2.0 OpenID Connect](#-oauth-20-openid-connect)
-
+- ⭐ [Spring OAuth 2.0 Client](#-spring-oauth-20-client)
+- ⭐ [Spring OAuth 2.0 Login](#-spring-oauth-20-login)
 
 ## ⭐ 개발 환경
 - SpringBoot version `2.7.18`
@@ -25,6 +26,7 @@
 - Dependency 추가
   - spring-boot-starter-web 
   - spring-boot-starter-security
+  - spring-boot-starter-oauth2-client
   - lombok
 
 ## ⭐ Spring Security 인증 및 인가 요약
@@ -66,7 +68,7 @@
 9. `SecurityContext`에 전역적으로 인증받았다는 정보 저장
   ![](/images/securitycontext.png)
 
-# ⭐ OAuth 2.0 Roles 요약
+## ⭐ OAuth 2.0 Roles 요약
 ![](images/oauth_roles.JPG)
 
 ### ✨ Resource Owner (사용자)
@@ -87,7 +89,7 @@
 ### ✨ Client
 - 사용자를 대신하여 권한을 부여받아 사용자의 리소스에 접근하려는 어플리케이션
 
-# ⭐ OAuth 2.0 Grant Types 요약
+## ⭐ OAuth 2.0 Grant Types 요약
 
 ### ✨ Authorization Code
 - 사용자의 인증 및 동의 후 인가서버는 클라이언트에게 Code를 응답
@@ -117,10 +119,25 @@
 - Code 요청시에는 Code Challenge, Code Challenge Method 포함하여 요청
 - Access Token 요청시에는 Code Verifier 포함하여 요청
 
-# ⭐ OAuth 2.0 OpenID Connect
+## ⭐ OAuth 2.0 OpenID Connect
 - OAuth 2.0 프로토콜 위에 구축된 ID 계층 `인증 프로토콜`
 - scope 지정 시 `openid` 를 포함하면 OpenID Connect 사용이 가능
 - 인증에 대한 정보는 `ID 토큰`이라고 하는 JWT로 반환
 - (참고) OAuth2.0은 `인가 프레임워크`
 - ID Token Decoding
   ![](images/openid_decode.png)
+
+## ⭐ Spring OAuth 2.0 Client
+- 리소스 서버의 보호자원 접근에 대한 연동모듈 구현
+- Grant Type : Client Credentials, Resource Owner Password Credentials, Refresh Token 
+
+### ✨ 클라이언트 권한부여요청
+- 클라이언트가 인가서버로 권한부여요청 또는 토큰을 요청할 때
+- `application.yml`에 있는 클라이언트 및 엔트포인트 정보가 `OAuth2Clientproperties`의 각 속성에 바인딩
+- 바인딩 된 속성 값은 인가서버로 권한 부여 요청을 하기 위한 `ClientRegistration` 클래스의 필드에 저장
+- `OAuth2Client`는 `ClientRegistration을 참조`해서 권한부여 요청을 위한 매개변수를 구성하고 인가서버와 통신
+  ![](images/client_registration.png)
+
+## ⭐ Spring OAuth 2.0 Login
+- 어플리케이션의 사용자(Resource Owner)를 외부 OAuth 2.0 Provider나 OpenID Connect 1.0 Provider 계정으로 로그인 할 수 있는 기능을 제공
+- Grant Type : Authorization Code
