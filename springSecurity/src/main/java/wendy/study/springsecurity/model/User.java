@@ -1,4 +1,4 @@
-package wendy.study.springsecurityoauth2.model;
+package wendy.study.springsecurity.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

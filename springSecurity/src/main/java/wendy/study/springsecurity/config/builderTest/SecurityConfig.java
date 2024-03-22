@@ -1,4 +1,4 @@
-//package wendy.study.springsecurityoauth2.config.builterTest;
+//package wendy.study.springsecurity.config.builderTest;
 //
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;

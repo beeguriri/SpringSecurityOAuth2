@@ -1,4 +1,4 @@
-//package wendy.study.springsecurityoauth2.config.builterTest;
+//package wendy.study.springsecurity.config.builderTest;
 //
 //import lombok.extern.slf4j.Slf4j;
 //import org.springframework.security.config.annotation.web.builders.HttpSecurity;

@@ -1,4 +1,4 @@
-package wendy.study.springsecurityoauth2.config;
+package wendy.study.springsecurity.config;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;

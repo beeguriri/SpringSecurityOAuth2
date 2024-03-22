@@ -1,8 +1,9 @@
-package wendy.study.springsecurityoauth2.config;
+package wendy.study.springsecurity.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
@@ -27,7 +28,7 @@ public class CustomSecurityConfig {
 //        });
 //        return http.build();
 //    }
-
+//
 //    @Bean
 //    public SecurityFilterChain securityFilterChain1(HttpSecurity http) throws Exception {
 //        http.authorizeRequests().anyRequest().authenticated();
